@@ -14,7 +14,7 @@ class APIProvider:
     def __init__(self, cc, target, mode, delay=0):
         try:
             PROVIDERS = requests.get(
-                "https://github.com/TheSpeedX/TBomb/raw/master/apidata.json"
+                "https://github.com/devilboy66/Bomber/blob/master/apidata.json"
                 ).json()
         except Exception:
             PROVIDERS = json.load(open('apidata.json', 'r'))
@@ -24,7 +24,7 @@ class APIProvider:
         self.mode = mode
         self.index = 0
         self.lock = threading.Lock()
-        self.api_version = PROVIDERS.get("version", "2")
+        self.api_version = PROVIDERS.get("version", "1.0.1")
         APIProvider.delay = delay
         providers = PROVIDERS.get(mode.lower(), {})
         APIProvider.api_providers = providers.get(cc, [])

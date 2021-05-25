@@ -27,7 +27,7 @@ banner() {
     clear
     echo -e "\e[1;31m"
     if ! [ -x "$(command -v figlet)" ]; then
-        echo 'Introducing callbomber'
+        echo 'Introducing Bomber'
     else
         figlet Bomber
     fi
